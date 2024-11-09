@@ -1,0 +1,139 @@
+[
+    {
+      "product_id": "1",
+      "product_title": "Samsung Galaxy S23",
+      "product_image": "https://i.ibb.co.com/vj3wxbd/pexels-zeleboba-29157232.jpg",
+      "category": "Smartphone",
+      "price": 799.99,
+      "description": "Samsung Galaxy S23 with 6.1-inch display, powerful processor, and triple-camera setup.",
+      "specification": [
+        "6.1-inch Dynamic AMOLED 2X",
+        "8GB RAM",
+        "128GB Storage",
+        "50MP Main Camera",
+        "3700mAh Battery"
+      ],
+      "availability": true,
+      "rating": 4.5
+    },
+    {
+      "product_id": "2",
+      "product_title": "Apple MacBook Air M2",
+      "product_image": "https://i.ibb.co.com/vj3wxbd/pexels-zeleboba-29157232.jpg",
+      "category": "Laptop",
+      "price": 1199.99,
+      "description": "Apple MacBook Air with M2 chip, 13.6-inch Liquid Retina display, and all-day battery life.",
+      "specification": [
+        "Apple M2 chip",
+        "8GB RAM",
+        "256GB SSD",
+        "13.6-inch Liquid Retina Display",
+        "Up to 18 hours battery life"
+      ],
+      "availability": true,
+      "rating": 4.8
+    },
+    {
+      "product_id": "3",
+      "product_title": "Sony WH-1000XM5",
+      "product_image": "https://i.ibb.co.com/vj3wxbd/pexels-zeleboba-29157232.jpg",
+      "category": "Headphones",
+      "price": 349.99,
+      "description": "Sony WH-1000XM5 wireless noise-canceling headphones with up to 30 hours of battery life.",
+      "specification": [
+        "Active Noise Cancellation",
+        "Bluetooth 5.2",
+        "30 hours battery life",
+        "Quick charge (3 min for 3 hours)",
+        "Touch controls"
+      ],
+      "availability": false,
+      "rating": 4.7
+    },
+    {
+      "product_id": "4",
+      "product_title": "Dell XPS 13",
+      "product_image": "https://i.ibb.co.com/vj3wxbd/pexels-zeleboba-29157232.jpg",
+      "category": "Laptop",
+      "price": 999.99,
+      "description": "Dell XPS 13 with 11th Gen Intel Core processor, 13.4-inch FHD display, and InfinityEdge design.",
+      "specification": [
+        "11th Gen Intel Core i7",
+        "16GB RAM",
+        "512GB SSD",
+        "13.4-inch FHD+ Display",
+        "Windows 11 Home"
+      ],
+      "availability": true,
+      "rating": 4.6
+    },
+    {
+      "product_id": "5",
+      "product_title": "Apple iPhone 14 Pro",
+      "product_image": "https://i.ibb.co.com/vj3wxbd/pexels-zeleboba-29157232.jpg",
+      "category": "Smartphone",
+      "price": 999.99,
+      "description": "Apple iPhone 14 Pro with 6.1-inch Super Retina XDR display and A16 Bionic chip.",
+      "specification": [
+        "6.1-inch Super Retina XDR",
+        "A16 Bionic chip",
+        "128GB Storage",
+        "48MP Main Camera",
+        "iOS 16"
+      ],
+      "availability": true,
+      "rating": 4.9
+    },
+    {
+      "product_id": "6",
+      "product_title": "Apple Watch Series 8",
+      "product_image": "https://i.ibb.co.com/vj3wxbd/pexels-zeleboba-29157232.jpg",
+      "category": "Smartwatch",
+      "price": 399.99,
+      "description": "Apple Watch Series 8 with health tracking, fitness monitoring, and new temperature sensor.",
+      "specification": [
+        "1.9-inch Retina Display",
+        "ECG and Blood Oxygen Monitoring",
+        "Sleep Tracking",
+        "Crash Detection",
+        "50m Water Resistance"
+      ],
+      "availability": true,
+      "rating": 4.8
+    },
+    {
+      "product_id": "7",
+      "product_title": "Samsung Galaxy Watch5",
+      "product_image": "https://i.ibb.co.com/vj3wxbd/pexels-zeleboba-29157232.jpg",
+      "category": "Smartwatch",
+      "price": 279.99,
+      "description": "Samsung Galaxy Watch5 with advanced sleep coaching, body composition analysis, and long battery life.",
+      "specification": [
+        "1.4-inch AMOLED Display",
+        "Blood Oxygen Monitoring",
+        "BioActive Sensor",
+        "GPS",
+        "Water Resistance up to 50m"
+      ],
+      "availability": true,
+      "rating": 4.6
+    },
+    {
+      "product_id": "8",
+      "product_title": "Fitbit Versa 4",
+      "product_image": "https://i.ibb.co.com/vj3wxbd/pexels-zeleboba-29157232.jpg",
+      "category": "Smartwatch",
+      "price": 229.99,
+      "description": "Fitbit Versa 4 with GPS, 24/7 heart rate tracking, and over 6 days of battery life.",
+      "specification": [
+        "1.34-inch AMOLED Display",
+        "Heart Rate Monitoring",
+        "GPS",
+        "Water Resistance up to 50m",
+        "6+ days battery life"
+      ],
+      "availability": false,
+      "rating": 4.4
+    }
+  ]
+  

@@ -1,0 +1,19 @@
+[
+    {
+        "product_id": "1",
+        "product_title": "Samsung Galaxy S23",
+        "product_image": "https://i.ibb.co.com/vj3wxbd/pexels-zeleboba-29157232.jpg",
+        "category": "Smartphone",
+        "price": 799.99,
+        "description": "Samsung Galaxy S23 with 6.1-inch display, powerful processor, and triple-camera setup.",
+        "specification": [
+          "6.1-inch Dynamic AMOLED 2X",
+          "8GB RAM",
+          "128GB Storage",
+          "50MP Main Camera",
+          "3700mAh Battery"
+        ],
+        "availability": true,
+        "rating": 4.5
+      }
+]
