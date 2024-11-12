@@ -1,4 +1,4 @@
-import { StrictMode, useState } from "react";
+import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
@@ -9,11 +9,7 @@ import Statistics from "./components/Statistics/Statistics";
 import Dashboard from "./components/Dashboard/Dashboard";
 import Support from "./components/Support/Support";
 import ProductDetail from "./components/productDetails/ProductDetail";
-
-// const [cartProducts, setCartProducts] = useState([]);
-// const handleAddToCart = (product) => {
-
-// };
+import Products from "./Main Section/Products";
 
 const router = createBrowserRouter([
   {
@@ -24,6 +20,14 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
+        loader: () => fetch("../categoryName.json"),
+        children: [
+          {
+            path: "category/:category",
+            element: <Products></Products>,
+            loader: () => fetch("../productData.json"),
+          },
+        ],
       },
       {
         path: "statistics",
@@ -32,7 +36,7 @@ const router = createBrowserRouter([
       {
         path: "dashboard",
         element: <Dashboard></Dashboard>,
-        loader: () => fetch("/productData.json"),
+        loader: () => fetch("../productData.json"),
       },
       {
         path: "support",
@@ -41,7 +45,7 @@ const router = createBrowserRouter([
       {
         path: "product/:product_id",
         element: <ProductDetail></ProductDetail>,
-        loader: () => fetch("/productData.json"),
+        loader: () => fetch("../productData.json"),
       },
     ],
   },

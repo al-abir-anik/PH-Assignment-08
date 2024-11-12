@@ -8,9 +8,7 @@ const ProductDetail = () => {
   const data = useLoaderData();
   
   
-  const product = data.find((p) => p.product_id == product_id);
-  console.log(product.price);
-  
+  const product = data.find((p) => p.product_id == product_id); 
 
   return (
     <section>
