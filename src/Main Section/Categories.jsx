@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Categories = ({categories}) => {
 
-  const [selectedCategory, setSelectedCategory] = useState(1);
+  const [selectedCategory, setSelectedCategory] = useState();
   const handleSelectedCategory = (id) => {
     setSelectedCategory(id);
   };

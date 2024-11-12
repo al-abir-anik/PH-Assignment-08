@@ -5,17 +5,15 @@ import { useLoaderData, useParams } from "react-router-dom";
 const Products = () => {
   const products = useLoaderData();
   const { category } = useParams();
-  
 
-  const [filteredProducts, setFilteredProducts] = useState();
+  const [filteredProducts, setFilteredProducts] = useState(products);
   useEffect(() => {
-    if (category === "All Products") {
+    if (!category || category === "All Products") {
       setFilteredProducts(products);
     } else {
       const filteredByCategory = [...products].filter(
         (product) => product.category === category
       );
-
       setFilteredProducts(filteredByCategory);
     }
   }, [products, category]);
