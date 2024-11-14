@@ -1,11 +1,32 @@
+import { useEffect, useState } from "react";
+
 const Cart = ({ cartList, handleRemoveFromCart }) => {
+  const [sortedCartList, setSortedCartList] = useState(cartList);
+  const handleSortByPrice = () => {
+    const sortedList = [...sortedCartList].sort((a, b) => b.price - a.price);
+    setSortedCartList(sortedList);
+  };
+  
+  useEffect(() => {
+    setSortedCartList(cartList);
+  }, [cartList]);
+
+  const totalCost = cartList
+    .reduce((total, product) => total + product.price, 0)
+    .toFixed(2);
+
   return (
     <section className="w-5/6 mx-auto py-10">
       <div className="flex items-center justify-between">
         <h3 className="font-bold text-2xl text-[#0b0b0b]">Cart</h3>
         <div className="flex items-center gap-5">
-          <p className="font-bold text-2xl text-[#0b0b0b]">Total Cost: 1414</p>
-          <button className="btn btn-outline px-6 font-semibold text-base rounded-full text-[#9538e2] border-[#9538e2] hover:bg-[#9538e2] hover:border-[#9538e2]">
+          <p className="font-bold text-2xl text-[#0b0b0b]">
+            Total Cost: {totalCost}
+          </p>
+          <button
+            onClick={handleSortByPrice}
+            className="btn btn-outline px-6 font-semibold text-base rounded-full text-[#9538e2] border-[#9538e2] hover:bg-[#9538e2] hover:border-[#9538e2]"
+          >
             Sort by Price
           </button>
           <button className="btn px-6 font-semibold text-base rounded-full text-white bg-[#9538e2] hover:border-white hover:bg-white hover:text-[#9538e2]">
@@ -16,7 +37,7 @@ const Cart = ({ cartList, handleRemoveFromCart }) => {
 
       {/* Dynamic Cart Products */}
       <div className="my-10 space-y-8">
-        {cartList.map((product) => (
+        {sortedCartList.map((product) => (
           <div
             key={product.product_id}
             className="h-44 p-8 flex justify-between bg-white rounded-2xl"
