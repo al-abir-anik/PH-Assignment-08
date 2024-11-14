@@ -1,9 +1,7 @@
-import CartProduct from "./CartProduct";
-
-const Cart = ({ productData }) => {
+const Cart = ({ cartList, handleRemoveFromCart }) => {
   return (
-    <section className="py-10">
-      <div className="w-5/6 mx-auto flex items-center justify-between">
+    <section className="w-5/6 mx-auto py-10">
+      <div className="flex items-center justify-between">
         <h3 className="font-bold text-2xl text-[#0b0b0b]">Cart</h3>
         <div className="flex items-center gap-5">
           <p className="font-bold text-2xl text-[#0b0b0b]">Total Cost: 1414</p>
@@ -16,12 +14,47 @@ const Cart = ({ productData }) => {
         </div>
       </div>
 
-      <div>
-        {productData.map((product) => (
-          <CartProduct
+      {/* Dynamic Cart Products */}
+      <div className="my-10 space-y-8">
+        {cartList.map((product) => (
+          <div
             key={product.product_id}
-            product={productData}
-          ></CartProduct>
+            className="h-44 p-8 flex justify-between bg-white rounded-2xl"
+          >
+            <div className="flex gap-10">
+              <img src={product.product_image} className="rounded-xl" />
+              <div className="space-y-3">
+                <h5 className="font-semibold text-xl text-[#09080f]">
+                  {product.product_title}
+                </h5>
+                <p className="font-normal text-base text-[#09080f]/60">
+                  {product.description}
+                </p>
+                <p className="font-semibold text-lg text-[#09080f]/80">
+                  Price: ${product.price}
+                </p>
+              </div>
+            </div>
+            <button
+              onClick={() => handleRemoveFromCart(product.product_id)}
+              className="btn btn-circle"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
+          </div>
         ))}
       </div>
     </section>

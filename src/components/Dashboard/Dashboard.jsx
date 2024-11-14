@@ -1,12 +1,50 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Cart from "./Cart";
 import Wishlist from "./Wishlist";
 import { useLoaderData } from "react-router-dom";
+import { getStoredCartList, getStoredWishList } from "../../utility/utility";
 
 const Dashboard = () => {
-  const [activeComponent, setActiveComponent] = useState("Cart");
   const productData = useLoaderData();
-  
+  const [activeComponent, setActiveComponent] = useState("Cart");
+
+  const [cartList, setCartList] = useState([]);
+  useEffect(() => {
+    const storedCartList = getStoredCartList();
+    const productCartList = productData.filter((product) =>
+      storedCartList.includes(product.product_id)
+    );
+    setCartList(productCartList);
+  }, []);
+  const handleRemoveFromCart = (id) => {
+    const storedCartList = getStoredCartList();
+    const updateCartList = storedCartList.filter(
+      (productId) => productId !== id
+    );
+    localStorage.setItem("cart-list", JSON.stringify(updateCartList));
+    setCartList((prevCartList) =>
+      prevCartList.filter((product) => product.product_id !== id)
+    );
+  };
+
+  const [wishList, setWishList] = useState([]);
+  useEffect(() => {
+    const storedWishList = getStoredWishList();
+    const productWishList = productData.filter((product) =>
+      storedWishList.includes(product.product_id)
+    );
+    setWishList(productWishList);
+  }, []);
+  const handleRemoveFromWishlist = (id) => {
+    const storedWishList = getStoredCartList();
+    const updateWishList = storedWishList.filter(
+      (productId) => productId !== id
+    );
+    localStorage.setItem("wish-list", JSON.stringify(updateWishList));
+    setWishList((prevWishList) =>
+      prevWishList.filter((product) => product.product_id !== id)
+    );
+  };
 
   return (
     <main className="bg-[#f6f6f6]">
@@ -41,9 +79,17 @@ const Dashboard = () => {
       </div>
 
       <div>
-        {activeComponent === "Cart" && <Cart productData={productData}></Cart>}
+        {activeComponent === "Cart" && (
+          <Cart
+            handleRemoveFromCart={handleRemoveFromCart}
+            cartList={cartList}
+          ></Cart>
+        )}
         {activeComponent === "Wishlist" && (
-          <Wishlist productData={productData}></Wishlist>
+          <Wishlist
+            handleRemoveFromWishlist={handleRemoveFromWishlist}
+            wishList={wishList}
+          ></Wishlist>
         )}
       </div>
     </main>

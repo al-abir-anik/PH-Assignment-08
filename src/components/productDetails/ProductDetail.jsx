@@ -2,13 +2,22 @@ import { useLoaderData, useParams } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 import { faHeart } from "@fortawesome/free-regular-svg-icons";
+import {
+  addToStoredCartList,
+  addToStoredWishList,
+} from "../../utility/utility";
 
 const ProductDetail = () => {
   const { product_id } = useParams();
   const data = useLoaderData();
-  
-  
-  const product = data.find((p) => p.product_id == product_id); 
+  const product = data.find((p) => p.product_id == product_id);
+
+  const handleAddToCart = (id) => {
+    addToStoredCartList(id);
+  };
+  const handleAddWishList = (id) => {
+    addToStoredWishList(id);
+  };
 
   return (
     <section>
@@ -84,11 +93,17 @@ const ProductDetail = () => {
               />
             </div>
             <div className="space-x-3">
-              <button className="btn bg-[#9538e2] rounded-full text-white font-semibold text-lg">
+              <button
+                onClick={() => handleAddToCart(product_id)}
+                className="btn bg-[#9538e2] rounded-full text-white font-semibold text-lg px-10"
+              >
                 Add To Cart
                 <FontAwesomeIcon icon={faCartShopping} />
               </button>
-              <button className="w-12 h-12 border rounded-full border-[#09080f]/10 text-[#09080f]/50">
+              <button
+                onClick={() => handleAddWishList(product_id)}
+                className="w-12 h-12 border rounded-full border-[#09080f]/10 text-[#09080f]/50"
+              >
                 <FontAwesomeIcon icon={faHeart} />
               </button>
             </div>
