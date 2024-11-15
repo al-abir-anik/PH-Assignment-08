@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import modalImg from "../../assets/Group.png";
 
 const Cart = ({ cartList, setCartList, handleRemoveFromCart }) => {
   const [sortedCartList, setSortedCartList] = useState(cartList);
@@ -101,7 +102,7 @@ const Cart = ({ cartList, setCartList, handleRemoveFromCart }) => {
       {/* Purchase Successful Modal*/}
       <dialog id="my_modal_1" className="modal">
         <div className="modal-box py-8 flex flex-col items-center">
-          <img src="/public/Group.png" className="mb-5" />
+          <img src={modalImg} className="mb-5" />
           <h3 className="font-bold text-xl text-[#09080f]">
             Payment Successfully
           </h3>

@@ -1,5 +1,6 @@
 import { Outlet, useLoaderData } from "react-router-dom";
 import Categories from "../../Main Section/Categories";
+import bannerImg from "../../assets/banner.jpg";
 
 const Home = () => {
   const categoryNames = useLoaderData();
@@ -22,7 +23,10 @@ const Home = () => {
         </div>
         <div className="h-72 relative">
           <div className="w-2/3 h-[42rem] p-8 bg-white/30 rounded-3xl border-4 border-white backdrop-blur-lg absolute -top-80  inset-x-0 mx-auto box-border">
-            <img src="../../../public/banner.jpg" className="w-full h-full object-cover rounded-3xl" />
+            <img
+              src={bannerImg}
+              className="w-full h-full object-cover rounded-3xl"
+            />
           </div>
         </div>
       </div>
