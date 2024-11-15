@@ -105,7 +105,7 @@ const Cart = ({ cartList, setCartList, handleRemoveFromCart }) => {
           <h3 className="font-bold text-xl text-[#09080f]">
             Payment Successfully
           </h3>
-          <hr></hr>
+          <hr />
           <p className="py-4 font-medium text-base text-[#09080f]/60">
             Thanks for purchasing.
           </p>
@@ -113,14 +113,12 @@ const Cart = ({ cartList, setCartList, handleRemoveFromCart }) => {
             Total: {finalTotal}
           </p>
           <div className="modal-action">
-            <form method="dialog ">
-              <button
-                onClick={handleCloseModal}
-                className="btn px-20 rounded-3xl font-semibold text-base text-[#09080f]"
-              >
-                Close
-              </button>
-            </form>
+            <button
+              onClick={handleCloseModal}
+              className="btn px-20 rounded-3xl font-semibold text-base text-[#09080f]"
+            >
+              Close
+            </button>
           </div>
         </div>
       </dialog>

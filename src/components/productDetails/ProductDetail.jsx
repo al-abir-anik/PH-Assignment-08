@@ -6,6 +6,7 @@ import {
   addToStoredCartList,
   addToStoredWishList,
 } from "../../utility/utility";
+import { ToastContainer } from "react-toastify";
 
 const ProductDetail = () => {
   const { product_id } = useParams();
@@ -110,6 +111,7 @@ const ProductDetail = () => {
           </div>
         </div>
       </div>
+      <ToastContainer></ToastContainer>
     </section>
   );
 };

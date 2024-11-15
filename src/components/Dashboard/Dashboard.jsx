@@ -3,6 +3,8 @@ import Cart from "./Cart";
 import Wishlist from "./Wishlist";
 import { useLoaderData } from "react-router-dom";
 import { getStoredCartList, getStoredWishList } from "../../utility/utility";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Dashboard = () => {
   const productData = useLoaderData();
@@ -25,6 +27,7 @@ const Dashboard = () => {
     setCartList((prevCartList) =>
       prevCartList.filter((product) => product.product_id !== id)
     );
+    toast.info("Product removed from Cart");
   };
 
   const [wishList, setWishList] = useState([]);
@@ -44,6 +47,7 @@ const Dashboard = () => {
     setWishList((prevWishList) =>
       prevWishList.filter((product) => product.product_id !== id)
     );
+    toast.info("Product removed from Wishlist");
   };
 
   return (
@@ -93,6 +97,7 @@ const Dashboard = () => {
           ></Wishlist>
         )}
       </div>
+      <ToastContainer></ToastContainer>
     </main>
   );
 };
