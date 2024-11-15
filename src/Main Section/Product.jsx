@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const Product = ({ productData }) => {
   return (
     <div className="w-96 p-7 space-y-3 bg-white rounded-2xl">
-      <img src={productData.product_image} className="rounded-xl" />
+      <img src={productData.product_image} className="w-full h-60 rounded-xl" />
       <h3 className="font-semibold text-xl text-[#09080f]">
         {productData.product_title}
       </h3>
