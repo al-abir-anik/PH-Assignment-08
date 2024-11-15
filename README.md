@@ -3,7 +3,7 @@
 Welcome to the repository for **Gadget Haven**, an e-commerce website built using **React** and **Vite**.
 
 ## 🔗 Live Website  
-Explore the live website here: [https://alabiranik-ph-assignment-08.surge.sh/category/Desktop](#)  
+Explore the live website here: [alabiranik-ph-assignment-08.surge.sh](#)  
 
 ---
 
