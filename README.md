@@ -1,9 +1,9 @@
 # Gadget Heaven
 
-Welcome to the repository for **Gadget Haven**, an e-commerce website built using **React** and **Vite**.
+Welcome to the repository for **Gadget Heaven**, an e-commerce website built using **React** and **Vite**.
 
 ## 🔗 Live Website  
-Explore the live website here: [alabiranik-ph-assignment-08.surge.sh](#)  
+Explore the live website here: [Gadget Heaven](https://alabiranik-ph-assignment-08.surge.sh)  
 
 ---
 
