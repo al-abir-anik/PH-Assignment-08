@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-const Cart = ({ cartList, handleRemoveFromCart }) => {
+const Cart = ({ cartList, setCartList, handleRemoveFromCart }) => {
   const [sortedCartList, setSortedCartList] = useState(cartList);
   const handleSortByPrice = () => {
     const sortedList = [...sortedCartList].sort((a, b) => b.price - a.price);
     setSortedCartList(sortedList);
   };
-  
+
   useEffect(() => {
     setSortedCartList(cartList);
   }, [cartList]);
@@ -14,6 +15,20 @@ const Cart = ({ cartList, handleRemoveFromCart }) => {
   const totalCost = cartList
     .reduce((total, product) => total + product.price, 0)
     .toFixed(2);
+
+  const [finalTotal, setFinalTotal] = useState(0);
+  const handleSuccessModal = () => {
+    setCartList([]);
+    setFinalTotal(totalCost);
+    localStorage.removeItem("cart-list");
+    document.getElementById("my_modal_1").showModal();
+  };
+
+  const navigate = useNavigate();
+  const handleCloseModal = () => {
+    document.getElementById("my_modal_1").close();
+    navigate("/");
+  };
 
   return (
     <section className="w-5/6 mx-auto py-10">
@@ -29,7 +44,11 @@ const Cart = ({ cartList, handleRemoveFromCart }) => {
           >
             Sort by Price
           </button>
-          <button className="btn px-6 font-semibold text-base rounded-full text-white bg-[#9538e2] hover:border-white hover:bg-white hover:text-[#9538e2]">
+          <button
+            onClick={handleSuccessModal}
+            disabled={cartList.length == 0}
+            className="btn px-6 font-semibold text-base rounded-full text-white bg-[#9538e2] hover:border-white hover:bg-white hover:text-[#9538e2]"
+          >
             Purchase
           </button>
         </div>
@@ -78,6 +97,33 @@ const Cart = ({ cartList, handleRemoveFromCart }) => {
           </div>
         ))}
       </div>
+
+      {/* Purchase Successful Modal*/}
+      <dialog id="my_modal_1" className="modal">
+        <div className="modal-box py-8 flex flex-col items-center">
+          <img src="/public/Group.png" className="mb-5" />
+          <h3 className="font-bold text-xl text-[#09080f]">
+            Payment Successfully
+          </h3>
+          <hr></hr>
+          <p className="py-4 font-medium text-base text-[#09080f]/60">
+            Thanks for purchasing.
+          </p>
+          <p className="font-medium text-base text-[#09080f]/60">
+            Total: {finalTotal}
+          </p>
+          <div className="modal-action">
+            <form method="dialog ">
+              <button
+                onClick={handleCloseModal}
+                className="btn px-20 rounded-3xl font-semibold text-base text-[#09080f]"
+              >
+                Close
+              </button>
+            </form>
+          </div>
+        </div>
+      </dialog>
     </section>
   );
 };
