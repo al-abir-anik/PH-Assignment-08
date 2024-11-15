@@ -1,12 +1,10 @@
 import { useEffect, useState } from "react";
 import Cart from "./Cart";
 import Wishlist from "./Wishlist";
-import { useLoaderData} from "react-router-dom";
+import { useLoaderData } from "react-router-dom";
 import { getStoredCartList, getStoredWishList } from "../../utility/utility";
 
 const Dashboard = () => {
-  
-
   const productData = useLoaderData();
   const [activeComponent, setActiveComponent] = useState("Cart");
 
